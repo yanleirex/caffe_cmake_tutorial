@@ -2,10 +2,10 @@
 // Created by yanlei on 16-9-19.
 //
 #include <caffe/caffe.hpp>
-#include <caffe/util/io.hpp>
-#include <caffe/blob.hpp>
-#include <caffe/common.hpp>
-#include <caffe/filler.hpp>
+//#include <caffe/util/io.hpp>
+//#include <caffe/blob.hpp>
+//#include <caffe/common.hpp>
+//#include <caffe/filler.hpp>
 
 using namespace caffe;
 using namespace std;

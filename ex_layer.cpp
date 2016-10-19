@@ -4,12 +4,11 @@
 
 #include <string>
 #include <iostream>
-#include <stdio.h>
 
 #include "caffe/caffe.hpp"
-#include "caffe/blob.hpp"
-#include "caffe/common.hpp"
-#include "caffe/filler.hpp"
+//#include "caffe/blob.hpp"
+//#include "caffe/common.hpp"
+//#include "caffe/filler.hpp"
 #include <caffe/layers/inner_product_layer.hpp>
 #include <caffe/layers/softmax_loss_layer.hpp>
 
@@ -29,6 +28,8 @@ Dtype str_1 = 0.7;
 int nIter = 1000;
 
 int main(int argc, char** argv) {
+
+
     Caffe::set_mode(Caffe::CPU);
 
     // generate training data from two 2-d gaussians

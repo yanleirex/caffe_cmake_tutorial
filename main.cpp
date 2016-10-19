@@ -24,8 +24,8 @@ int main() {
 
     //random sampling from uniform distribution
     FillerParameter fillerParameter;
-    fillerParameter.set_min(-3);
-    fillerParameter.set_max(3);
+    fillerParameter.set_min(-4);
+    fillerParameter.set_max(5);
     UniformFiller<Dtype> filler(fillerParameter);
     filler.Fill(blob);
 
