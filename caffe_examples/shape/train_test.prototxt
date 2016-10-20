@@ -62,7 +62,7 @@ layer
 layer
 {
     name:"ip2"
-    type:InnerProduct"
+    type:"InnerProduct"
     bottom:"sig1"
     top:"ip2"
     inner_product_param

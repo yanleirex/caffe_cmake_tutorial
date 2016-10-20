@@ -35,7 +35,7 @@ layer
 layer
 {
     name:"ip2"
-    type:InnerProduct"
+    type:"InnerProduct"
     bottom:"sig1"
     top:"ip2"
     inner_product_param
@@ -72,8 +72,7 @@ layer
 layer
 {
     name:"prob1"
-    type:"SoftmaxWithLoss"
+    type:"Softmax"
     bottom:"ip3"
-    bottom:"label"
     top:"prob1"
 }

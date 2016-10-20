@@ -10,6 +10,9 @@ add_definitions(${Caffe_DEFINITIONS})
 
 find_package(OpenCV REQUIRED)
 
+
+include_directories(/usr/local/include)
+
 add_executable(caffe_cmake main.cpp)
 target_link_libraries(caffe_cmake ${Caffe_LIBRARIES})
 
@@ -38,3 +41,5 @@ add_executable(test_caffe_manual test_caffe_manual.cpp)
 target_link_libraries(test_caffe_manual ${Caffe_LIBRARIES})
 
 add_subdirectory(caffe_examples)
+
+add_subdirectory(cnn_age_gender)
