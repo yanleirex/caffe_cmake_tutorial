@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "face_detection/face_detection.hpp"
-#include "age_estimation/age_estimation.hpp"
+#include "age_estimation/age_gender_estimator.hpp"
 #include "gender_estimation/gender_estimation.hpp"
 
 int main(int argc, const char* argv[])

@@ -102,8 +102,11 @@ std::vector<float> Classifier::Predict(const cv::Mat& img)
     Blob<float>* output_layer = net_->output_blobs()[0];
     const float* begin = output_layer->cpu_data();
     const float* end = begin+output_layer->channels();
+    /*
+    float* predict = const_cast<float*>(output_layer->cpu_data()+output_layer->shape(2)*output_layer->shape(3));
+    Eigen::Map<Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>> prob(predict, output_layer->shape(2), output_layer->shape(3));
+    */
     return std::vector<float>(begin, end);
-
 }
 
 void Classifier::WrapInputLayer(std::vector<cv::Mat> *input_channels)

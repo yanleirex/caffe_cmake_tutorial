@@ -3,6 +3,8 @@
 //
 #include <string>
 
+#include <ctime>
+
 #include "Classifier.h"
 
 int main()
@@ -22,7 +24,7 @@ int main()
     Classifier gender_estimator(model_file_gender, trained_file_gender, mean_file, label_file_gender);
 
     //cv::Mat img = cv::imread("/home/yanlei/Documents/code/cpp/ClionProjects/caffe_cmake/cnn_age_gender/tmp.jpg", -1);
-    cv::VideoCapture capture(0);
+    cv::VideoCapture capture(1);
     cv::namedWindow("image");
     if(!capture.isOpened())
     {
@@ -33,8 +35,11 @@ int main()
     while((char)keyboard != 'q' && (char)keyboard != 27)
     {
         capture>>frame;
+        long beginTime =clock();//获得开始时间，单位为毫秒
         std::vector<Prediction> gender_pred = gender_estimator.Classify(frame, 1);
+        long endTime_1 = clock();
         std::vector<Prediction> predictions = age_estimator.Classify(frame, 1);
+        long endTime_2 = clock();
         for(size_t i=0; i<predictions.size();++i)
         {
             Prediction p = predictions[i];
@@ -48,6 +53,8 @@ int main()
             std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
                       << p.first << "\"" << std::endl;
         }
+        std::cout<<"Gender estimator time cost: "<<(endTime_1 - beginTime)*1000/CLOCKS_PER_SEC<<" ms"<<std::endl;
+        std::cout<<"Age estimator time cost: "<<(endTime_2 - endTime_1)*1000/CLOCKS_PER_SEC<<" ms"<<std::endl;
         cv::imshow("image", frame);
         keyboard=cv::waitKey(1);
     }

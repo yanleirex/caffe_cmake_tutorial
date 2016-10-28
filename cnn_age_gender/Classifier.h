@@ -12,6 +12,7 @@
 #include <utility>
 #include <iosfwd>
 #include <opencv2/opencv.hpp>
+#include <eigen3/Eigen/Eigen>
 
 #include <caffe/caffe.hpp>
 
@@ -50,6 +51,7 @@ public:
             const string& label_file);
 
     std::vector<Prediction> Classify(cv::Mat& img, int N);
+
 
 private:
     void setMean(const string& mean_file);

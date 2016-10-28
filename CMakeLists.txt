@@ -40,6 +40,15 @@ target_link_libraries(logreg_test ${Caffe_LIBRARIES})
 add_executable(test_caffe_manual test_caffe_manual.cpp)
 target_link_libraries(test_caffe_manual ${Caffe_LIBRARIES})
 
+add_executable(readMnistImage readMnistImage.cpp)
+target_link_libraries(readMnistImage ${OpenCV_LIBS})
+
+add_executable(testTrainedMnist testTrainedMnist.cpp)
+target_link_libraries(testTrainedMnist ${OpenCV_LIBS})
+target_link_libraries(testTrainedMnist ${Caffe_LIBRARIES})
+
 add_subdirectory(caffe_examples)
 
 add_subdirectory(cnn_age_gender)
+
+add_subdirectory(AgeAndGenderEstimation-master)
